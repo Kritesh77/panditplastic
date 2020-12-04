@@ -20,6 +20,11 @@
   --lg-head: 2rem
 }
 
+img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 .black {
   background-color: #0c121cde;
 }
@@ -371,4 +376,33 @@ header p{
   margin: 10px 0;
 }
 .review p{
+}
+
+/* fifth wrap */
+.fifth-wrap{
+  justify-content: space-between;
+  padding-top: 4% ;
+  height: 100vh
+}
+.wrap-image{
+  height: 600px;
+  width:600px;
+  background-color: white
+}
+.fifth-wrap-text{
+  width: 50%;
+  height: auto;
+  padding: 10% 8%;
+}
+.fifth-wrap-text h1{
+  font-size: 2.2rem;
+  word-spacing: 5px;
+  letter-spacing: 3px;
+  margin: 5% 0;
+}
+.fifth-wrap-text p{
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  line-height: 2rem;
+
 }
