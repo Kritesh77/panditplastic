@@ -382,16 +382,18 @@ header p{
 .fifth-wrap{
   justify-content: space-between;
   padding-top: 4% ;
-  height: 100vh
+  height: 100%
 }
 .wrap-image{
-  height: 600px;
-  width:600px;
+  height: 85vh;
+  display: inline-block;
+  width:85vh;
   background-color: white
 }
 .fifth-wrap-text{
   width: 50%;
   height: auto;
+  display: inline-block;
   padding: 10% 8%;
 }
 .fifth-wrap-text h1{
@@ -404,5 +406,4 @@ header p{
   letter-spacing: 1px;
   font-size: 1.1rem;
   line-height: 2rem;
-
 }
