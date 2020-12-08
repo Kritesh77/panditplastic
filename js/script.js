@@ -1,6 +1,32 @@
 // Hide Header on on scroll down
 $(document).ready(function() {
-  $(document).ready(function() {
+    var didScroll;
+    var lastScrollTop = 0;
+    var delta = 5;
+    var navbarHeight = $('header').outerHeight();
+    $(window).scroll(function(event) {
+      didScroll = true;
+    });
+    setInterval(function() {
+      if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+      }
+    }, 250);
+    function hasScrolled() {
+      var st = $(this).scrollTop();
+      if (Math.abs(lastScrollTop - st) <= delta)
+        return;
+      if (st > lastScrollTop && st > navbarHeight) {
+        $('header').removeClass('nav-down').addClass('nav-up');
+      } else {
+        if (st + $(window).height() < $(document).height()) {
+          $('header').removeClass('nav-up').addClass('nav-down');
+        }
+      }
+      lastScrollTop = st;
+    }
+
     var slider = $('#homepage-slider');
     var prev = document.querySelector('#newslider-left');
     var next = document.querySelector('#newslider-right');
@@ -10,9 +36,9 @@ $(document).ready(function() {
       centerMode: true,
       arrows: false,
       focusOnSelect: true,
-      speed:800,
+      speed: 800,
       dots: false,
-      mobileFirst:true,
+      mobileFirst: true,
       adaptiveHeight: true,
       variableWidth: true,
       responsive: [
@@ -47,18 +73,17 @@ $(document).ready(function() {
     $("#review-slider").slick({
       autoplay: false,
       infinite: true,
-      mobileFirst:true,
+      mobileFirst: true,
       centerMode: true,
       arrows: false,
       slidesToShow: 3,
-      slidesToScroll:1,
+      slidesToScroll: 1,
       focusOnSelect: true,
       dots: true,
-      centerPadding:'50px',
-      speed:1100,
+      centerPadding: '50px',
+      speed: 1100,
       variableWidth: true,
-      responsive: [
-        {
+      responsive: [{
           breakpoint: 600,
           settings: {
             slidesToShow: 2,
@@ -82,4 +107,3 @@ $(document).ready(function() {
     });
 
   });
-});
